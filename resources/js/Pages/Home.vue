@@ -2,7 +2,7 @@
   <CarouselHome />
 
   <div class="container mt-5 d-flex gap-3">
-    <div class="flex-grow-1 " v-for="(card, i) in featureCards" data-aos="fade-up" :data-aos-delay="i * 100">
+    <div class="flex-grow-1 " v-for="(card, i) in featureCards" data-aos="fade-up" :data-aos-delay="(i + 1) * 150">
       <div class="card h-100 mx-auto" style="width: 400px;">
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
@@ -18,6 +18,14 @@
     <Feature class="my-5" />
   </BgParallax>
 
+  <Header title="О Компании" />
+  <About />
+
+  <Header title="Услуги" />
+  <Services />
+
+
+  <Contacts />
 
 </template>
 
@@ -57,8 +65,11 @@ import BgParallax from '@/ui/components/BgParallax.vue';
 import CarouselHome from '@/ui/components/CarouselHome.vue';
 import bg from '../../images/bg/parallax.jpg';
 import Header from '@/ui/components/Header.vue';
+import Contacts from '@/ui/components/Contacts.vue';
+import About from '@/ui/components/About.vue';
+import Services from '@/ui/components/Services.vue';
 
-AOS.init();
+AOS.init({ duration: 1000, delay: 300 });
 
 export default {
   data() {
@@ -77,7 +88,10 @@ export default {
     Feature,
     BgParallax,
     CarouselHome,
-    Header
+    Header,
+    Contacts,
+    About,
+    Services
   }
 };
 </script>

@@ -3,7 +3,8 @@
 
         <div class="feature">
             <div class="feature__wrap">
-                <div data-aos='fade-right' v-for="card in featureCards.slice(0, featureCards.length / 2)" :key="card">
+                <div data-aos='fade-right' data-aos-duration="800" data-aos-delay="800"
+                    v-for="card in featureCards.slice(0, featureCards.length / 2)" :key="card">
                     <div class="card h-100">
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-2"><i class="bi bi-patch-check"></i>
@@ -15,7 +16,7 @@
             </div>
 
             <div class="feature__wrap">
-                <div data-aos='fade-left'
+                <div data-aos='fade-left' data-aos-duration="800" data-aos-delay="800"
                     v-for="card in featureCards.slice(featureCards.length / 2, featureCards.length)" :key="card">
                     <div class="card h-100">
                         <div class="card-body">

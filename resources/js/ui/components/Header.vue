@@ -1,7 +1,5 @@
 <template>
-    <header>
-        <h2 class="text-center header my-5">{{ title }}</h2>
-    </header>
+    <h2 class="text-center header my-5">{{ title }}</h2>
 </template>
 
 <script setup lang="ts">

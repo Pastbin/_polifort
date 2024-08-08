@@ -13,7 +13,7 @@
 <body class="font-sans antialiased">
     @include('partials.header')
     <main>@inertia</main>
-    @include('partials.footer')
+    {{-- @include('partials.footer') --}}
 </body>
 
 </html>

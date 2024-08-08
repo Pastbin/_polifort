@@ -24,6 +24,8 @@ import slide7 from '../../images/works/7.jpg';
 import slide8 from '../../images/works/8.jpg';
 import slide9 from '../../images/works/9.jpg';
 import slide10 from '../../images/works/10.jpg';
+import slide11 from '../../images/works/11.jpg';
+import slide12 from '../../images/works/12.jpg';
 import Header from './components/Header.vue';
 
 Fancybox.bind('[data-fancybox="gallery"]');
@@ -46,6 +48,8 @@ export default {
         { title: '', description: '', image: slide8 },
         { title: '', description: '', image: slide9 },
         { title: '', description: '', image: slide10 },
+        { title: '', description: '', image: slide11 },
+        { title: '', description: '', image: slide12 },
 
       ],
     };
