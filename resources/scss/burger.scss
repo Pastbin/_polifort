@@ -1,0 +1,18 @@
+#sidenav {
+  position: fixed;
+  top: 0;
+  background: #fff;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 11;
+
+  ul {
+    list-style: none;
+  }
+
+  i {
+    font-size: 22px;
+    align-self: flex-end;
+  }
+}

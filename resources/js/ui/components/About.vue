@@ -1,6 +1,5 @@
 <template>
   <div class="about container my-5">
-
     <div class="accordion" id="accordion">
       <!-- <div class="accordion-item" v-for="(card, i) in cards">
         <h2 class="accordion-header">
@@ -30,20 +29,16 @@
         </div>
         <div class="about_card" v-for="(card, i) in cards" :key="i">
           <div class="title">{{ card.title }}</div>
-          <img :src="card.image" alt="about image">
+          <img :src="card.image" alt="about image" />
           <div class="description">{{ card.description }}</div>
         </div>
       </div>
-
     </div>
-
-
   </div>
 </template>
 
 <style scoped>
 .about {
-
   p {
     font-size: 18px;
   }
@@ -71,7 +66,6 @@
   img {
     transition: all 0.5s;
   }
-
 }
 
 .description {
@@ -81,7 +75,9 @@
   padding: 25px;
   bottom: 0;
   color: white;
-  text-shadow: 2px 2px 3px #000, -2px -2px 3px #000;
+  text-shadow:
+    2px 2px 3px #000,
+    -2px -2px 3px #000;
   background: rgba(0, 0, 0, 0.1);
   text-align: justify;
 }
@@ -115,56 +111,52 @@
   overflow: hidden;
   position: relative;
   transition: all 0.5s;
-
 }
 </style>
 
 <script>
-import slide1 from '../../../images/about/1.jpg';
-import slide2 from '../../../images/about/2.jpg';
-import slide3 from '../../../images/about/3.jpg';
-import slide4 from '../../../images/about/4.jpeg';
-import slide5 from '../../../images/about/5.jpg';
-
-
+import slide1 from "../../../images/about/1.jpg";
+import slide2 from "../../../images/about/2.jpg";
+import slide4 from "../../../images/about/4.jpeg";
+import slide5 from "../../../images/about/5.jpg";
 
 export default {
-  name: 'About',
+  name: "About",
   data() {
     return {
       cards: [
         {
-          title: 'О компании',
+          title: "О компании",
           description: `ООО "ПолифортМаш" была основана в 2005 году в городе Самара группой профессионалов в области
         металлообработки. Компания стремится стать ведущим предприятием по производству высококачественных
         деталей и оборудования для различных отраслей промышленности.`,
-          image: slide1
+          image: slide1,
         },
         {
-          title: 'Развитие Компании',
+          title: "Развитие Компании",
           description: `"ПолифортМаш" быстро завоевала доверие клиентов и
         начала расти. В 2010 году компания установила современное оборудование для токарной, фрезерной и
         зубонарезной обработки, что позволило значительно увеличить объемы производства. В 2015 году внедрение
         систем ЧПУ - обработки повысило точность и эффективность процессов.`,
-          image: slide2
+          image: slide2,
         },
         {
-          title: 'Специалисты',
+          title: "Специалисты",
           description: `На сегодняшний день штат компании составляет 10 человек. Все сотрудники — высококвалифицированные
         профессионалы 5-6 разрядов. Каждый из них имеет глубокие знания в области металлообработки и
         способен решать задачи любой сложности. В "ПолифортМаш" трудятся не только грамотные рабочие, но и
         инженеры, умеющие проектировать и внедрять нестандартные решения.`,
-          image: slide4
+          image: slide4,
         },
         {
-          title: 'Наша миссия',
+          title: "Наша миссия",
           description: `Миссия "ПолифортМаш" — предоставлять высококачественные услуги по металлообработке, удовлетворяя
         потребности клиентов и помогая им достигать успеха.Мы гордимся своей работой и стремимся выполнять
         каждый заказ с максимальной точностью и в установленные сроки.`,
-          image: slide5
+          image: slide5,
         },
-      ]
-    }
-  }
-}
+      ],
+    };
+  },
+};
 </script>

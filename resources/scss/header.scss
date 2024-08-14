@@ -1,72 +1,81 @@
 .header {
-    padding: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
+    gap: 20px;
+    align-items: center;
 
-    &__info {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        align-items: center;
-
-        &__wrap {
-            @media (max-width: 768px) {
-                width: 100%;
-            }
-        }
-
-        a {
-            text-wrap: nowrap;
-        }
-
-        &__item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    @media (max-width: 767px) {
+      display: none;
     }
 
-    &__logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    &__top {
+    &__wrap {
+      @media (max-width: 768px) {
         width: 100%;
-        display: flex;
-        gap: 30px;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 40px;
+      }
     }
 
-    &__nav {
-
-        position: sticky;
-        top: 0;
-
-        ul {
-            font-size: 16px;
-            display: flex;
-            text-transform: uppercase;
-            gap: 20px;
-            list-style: none;
-        }
-
-        li {
-            padding: 10px;
-            border-bottom: 1px solid #999;
-
-            &:hover {
-                background-color: #f1f1f1;
-            }
-        }
-
-        a:hover {
-            text-decoration: none;
-        }
+    a {
+      text-wrap: nowrap;
     }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__nav {
+    background: #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    ul {
+      font-size: 16px;
+      display: flex;
+      text-transform: uppercase;
+      gap: 20px;
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    li {
+      padding: 5px;
+      border-bottom: 1px solid #999;
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
 }
