@@ -1,7 +1,7 @@
 <template>
-  <CarouselHome />
+  <!-- <CarouselHome /> -->
 
-  <div class="container mt-5 d-flex gap-3">
+  <!-- <div class="container mt-5 d-flex gap-3 feature">
     <div class="flex-grow-1 " v-for="(card, i) in featureCards" data-aos="fade-up" :data-aos-delay="(i + 1) * 150">
       <div class="card h-100 mx-auto" style="width: 400px;">
         <div class="card-body">
@@ -10,22 +10,25 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <Works />
-  <Header title="Наши преимущества" />
+  <!-- <Works />
+
+  <Title title="Наши преимущества" />
   <BgParallax :src="bg" class="my-5">
     <Feature class="my-5" />
   </BgParallax>
 
-  <Header title="О Компании" />
+  <Title title="О Компании" />
   <About />
 
-  <Header title="Услуги" />
+  <Title title="Услуги" />
   <Services />
 
+  <Title title="Схема работы" />
+  <Scheme />
 
-  <Contacts />
+  <Contacts /> -->
 
 </template>
 
@@ -43,6 +46,10 @@
   p {
     font-size: 24px;
   }
+}
+
+.feature {
+  flex-wrap: wrap;
 }
 
 #carouselHome {
@@ -64,10 +71,11 @@ import Feature from '@/ui/Feature.vue';
 import BgParallax from '@/ui/components/BgParallax.vue';
 import CarouselHome from '@/ui/components/CarouselHome.vue';
 import bg from '../../images/bg/parallax.jpg';
-import Header from '@/ui/components/Header.vue';
+import Title from '@/ui/components/Title.vue';
 import Contacts from '@/ui/components/Contacts.vue';
 import About from '@/ui/components/About.vue';
 import Services from '@/ui/components/Services.vue';
+import Scheme from '@/ui/components/Scheme.vue';
 
 AOS.init({ duration: 1000, delay: 300 });
 
@@ -88,10 +96,11 @@ export default {
     Feature,
     BgParallax,
     CarouselHome,
-    Header,
+    Title,
     Contacts,
     About,
-    Services
+    Services,
+    Scheme
   }
 };
 </script>

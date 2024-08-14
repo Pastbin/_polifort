@@ -34,7 +34,7 @@
 
 
 <script>
-import Header from './components/Header.vue';
+import Header from './components/Title.vue';
 
 export default {
     name: 'Feature',

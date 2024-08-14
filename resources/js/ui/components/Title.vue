@@ -12,7 +12,7 @@ withDefaults(defineProps<{
 
 <script lang="ts">
 export default {
-    name: 'Header'
+    name: 'Title'
 }
 </script>
 

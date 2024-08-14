@@ -26,7 +26,7 @@ import slide9 from '../../images/works/9.jpg';
 import slide10 from '../../images/works/10.jpg';
 import slide11 from '../../images/works/11.jpg';
 import slide12 from '../../images/works/12.jpg';
-import Header from './components/Header.vue';
+import Header from './components/Title.vue';
 
 Fancybox.bind('[data-fancybox="gallery"]');
 
