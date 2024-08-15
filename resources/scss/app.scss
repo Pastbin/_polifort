@@ -1,83 +1,84 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
-@import 'fonts.scss';
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "fonts.scss";
 
 html {
-    overflow-x: hidden;
-    min-height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #222;
-    background: #eee;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  font-family: "Roboto", sans-serif;
+  color: #222;
+  background: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
-    // blue scroll
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
+  // blue scroll
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background: rgb(120, 120, 214);
-    }
+  &::-webkit-scrollbar-thumb {
+    background: rgb(120, 120, 214);
+  }
 }
 
 main {
-    flex-grow: 1;
+  flex-grow: 1;
+  overflow-x: hidden;
 }
 
 a {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .flex {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .jcsb {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .aic {
-    align-items: center;
+  align-items: center;
 }
 
 .jcc {
-    justify-content: center;
+  justify-content: center;
 }
 
 h1,
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .container {
-    max-width: 1200px;
-    padding: 0 20px;
-    margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
 }

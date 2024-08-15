@@ -1,37 +1,37 @@
 <template>
   <CarouselHome />
 
-  <div class="container mt-5 d-flex gap-3 feature">
+  <!-- <div class="container mt-5 d-flex gap-3 feature">
     <div class="flex-grow-1" v-for="(card, i) in featureCards" data-aos="fade-up" :data-aos-delay="(i + 1) * 150">
-      <div class="card h-100 mx-auto" style="width: 400px">
+      <div class="card h-100 mx-auto">
         <div class="card-body">
           <h5 class="card-title">{{ card.title }}</h5>
           <p class="card-text">{{ card.description }}</p>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <!-- <Works />
+  <!-- <Works /> -->
 
-  <Title title="Наши преимущества" />
+  <!-- <Title title="Наши преимущества" />
   <BgParallax :src="bg" class="my-5">
     <Feature class="my-5" />
-  </BgParallax>
+  </BgParallax> -->
 
-  <Title title="О Компании" />
-  <About />
+  <!-- <Title title="О Компании" />
+  <About /> -->
 
-  <Title title="Услуги" />
-  <Services />
+  <!-- <Title title="Услуги" /> -->
+  <!-- <Services /> -->
 
-  <Title title="Схема работы" />
-  <Scheme />
+  <!-- <Title title="Схема работы" /> -->
+  <!-- <Scheme /> -->
 
-  <Contacts /> -->
+  <!-- <Contacts /> -->
 </template>
 
-<style>
+<style scoped>
 .slider-description {
   text-shadow: 0 0px 4px rgba(0, 0, 0);
   background: rgba(0, 0, 50, 0.2);

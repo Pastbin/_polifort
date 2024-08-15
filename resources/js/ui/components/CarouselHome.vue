@@ -18,7 +18,7 @@
         <img :src="slide.image" class="d-block w-100" alt="slider image" />
         <div class="carousel-caption slider-description">
           <h5>{{ slide.title }}</h5>
-          <p>{{ slide.description }}</p>
+          <p class="description">{{ slide.description }}</p>
         </div>
       </div>
     </div>
@@ -33,6 +33,27 @@
     </button>
   </div>
 </template>
+
+<style scoped>
+.carousel-caption {
+  left: 5%;
+  right: 5%;
+}
+
+.carousel {
+  h5 {
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .description {
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+</style>
 
 <script lang="ts">
 import slider1 from "../../../images/slider/1.jpg";
