@@ -13,18 +13,18 @@
 <script>
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import slide1 from "../../images/works/1.jpg";
-import slide2 from "../../images/works/2.jpg";
-import slide3 from "../../images/works/3.jpg";
-import slide4 from "../../images/works/4.jpg";
-import slide5 from "../../images/works/5.jpg";
-import slide6 from "../../images/works/6.jpg";
-import slide7 from "../../images/works/7.jpg";
-import slide8 from "../../images/works/8.jpg";
-import slide9 from "../../images/works/9.jpg";
-import slide10 from "../../images/works/10.jpg";
-import slide11 from "../../images/works/11.jpg";
-import slide12 from "../../images/works/12.jpg";
+import slide1 from "../../images/works/1.webp";
+import slide2 from "../../images/works/2.webp";
+import slide3 from "../../images/works/3.webp";
+import slide4 from "../../images/works/4.webp";
+import slide5 from "../../images/works/5.webp";
+import slide6 from "../../images/works/6.webp";
+import slide7 from "../../images/works/7.webp";
+import slide8 from "../../images/works/8.webp";
+import slide9 from "../../images/works/9.webp";
+import slide10 from "../../images/works/10.webp";
+import slide11 from "../../images/works/11.webp";
+import slide12 from "../../images/works/12.webp";
 import Header from "./components/Title.vue";
 
 Fancybox.bind('[data-fancybox="gallery"]');

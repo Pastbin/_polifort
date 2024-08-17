@@ -70,7 +70,7 @@ import Works from "../ui/Works.vue";
 import Feature from "@/ui/Feature.vue";
 import BgParallax from "@/ui/components/BgParallax.vue";
 import CarouselHome from "@/ui/components/CarouselHome.vue";
-import bg from "../../images/bg/parallax.jpg";
+import bg from "../../images/bg/parallax.webp";
 import Title from "@/ui/components/Title.vue";
 import Contacts from "@/ui/components/Contacts.vue";
 import About from "@/ui/components/About.vue";

@@ -70,10 +70,10 @@
 </style>
 
 <script lang="ts">
-import slider1 from "../../../images/slider/1.jpg";
-import slider2 from "../../../images/slider/2.jpg";
-import slider3 from "../../../images/slider/3.jpg";
-import slider4 from "../../../images/slider/4.jpg";
+import slider1 from "../../../images/slider/1.webp";
+import slider2 from "../../../images/slider/2.webp";
+import slider3 from "../../../images/slider/3.webp";
+import slider4 from "../../../images/slider/4.webp";
 
 export default {
   data() {

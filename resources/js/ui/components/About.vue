@@ -86,10 +86,10 @@
 </style>
 
 <script>
-import slide1 from "../../../images/about/1.jpg";
-import slide2 from "../../../images/about/2.jpg";
-import slide4 from "../../../images/about/4.jpeg";
-import slide5 from "../../../images/about/5.jpg";
+import slide1 from "../../../images/about/1.webp";
+import slide2 from "../../../images/about/2.webp";
+import slide4 from "../../../images/about/4.webp";
+import slide5 from "../../../images/about/5.webp";
 
 export default {
   name: "About",
