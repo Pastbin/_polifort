@@ -2,8 +2,8 @@
   <div class="container">
     <h1 class="mb-5">Контакты</h1>
 
-    <div class="address">
-      <div class="flex aic">
+    <div class="list-group">
+      <div class="list-group-item">
         <div class="title">
           <i class="bi bi-geo-alt"></i>
           Адрес офиса:
@@ -11,23 +11,27 @@
         <div class="description">{{ COMPANY_INFO.address }}</div>
       </div>
 
-      <div class="flex aic">
+      <div class="list-group-item">
         <div class="title">
           <i class="bi bi-telephone"></i>
           Телефон:
         </div>
-        <div><a :href="COMPANY_INFO.phone.alink">{{ COMPANY_INFO.phone.number }}</a></div>
+        <div>
+          <a :href="COMPANY_INFO.phone.alink">{{ COMPANY_INFO.phone.number }}</a>
+        </div>
       </div>
 
-      <div class="flex aic">
+      <div class="list-group-item">
         <div class="title">
           <i class="bi bi-envelope"></i>
           Электронная почта:
         </div>
-        <div><a href="mailto:{{ COMPANY_INFO.email }}">{{ COMPANY_INFO.email }}</a></div>
+        <div>
+          <a href="mailto:{{ COMPANY_INFO.email }}">{{ COMPANY_INFO.email }}</a>
+        </div>
       </div>
 
-      <div class="flex aic">
+      <div class="list-group-item">
         <div class="title">
           <i class="bi bi-clock"></i>
           Время работы:
@@ -35,7 +39,7 @@
         <div class="description">{{ COMPANY_INFO.time }}</div>
       </div>
 
-      <div class="flex aic">
+      <div class="list-group-item">
         <div class="title">
           <i class="bi bi-geo-alt"></i>
           Адрес производства:
@@ -51,41 +55,32 @@
       </button>
     </a>
 
-    <div class="my-5">
+    <div class="my-5 map">
       <YaMap />
     </div>
   </div>
 </template>
 
 <script>
-import YaMap from '@/ui/components/YaMap.vue';
-import { COMPANY_INFO } from '@/const/contacts';
+import YaMap from "@/ui/components/YaMap.vue";
+import { COMPANY_INFO } from "@/const/contacts";
 
 export default {
-  name: 'Contacts',
+  name: "Contacts",
   components: {
-    YaMap
+    YaMap,
   },
   data: () => ({
-    COMPANY_INFO
-  })
+    COMPANY_INFO,
+  }),
 };
-
 </script>
-
 
 <style scoped lang="scss">
 .call {
   &:hover {
     text-decoration: none;
   }
-}
-
-.address {
-  font-size: 18px;
-  flex-direction: column;
-  display: flex;
-  gap: 10px;
 }
 
 .description {
@@ -96,7 +91,7 @@ export default {
   font-size: 20px;
 }
 
-#map {
+.map {
   height: 500px;
   max-height: 80vh;
 }
