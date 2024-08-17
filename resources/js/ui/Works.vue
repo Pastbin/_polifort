@@ -4,7 +4,7 @@
 
     <div class="gallery">
       <a v-for="(work, i) in works" data-fancybox="gallery" :key="i" data-aos="zoom-in" :href="work.image">
-        <img :src="work.image" alt="works" />
+        <img :src="work.image" loading="lazy" alt="works" />
       </a>
     </div>
   </div>
@@ -27,7 +27,7 @@ import slide11 from "../../images/works/11.webp";
 import slide12 from "../../images/works/12.webp";
 import Header from "./components/Title.vue";
 
-Fancybox.bind('[data-fancybox="gallery"]');
+Fancybox.bind();
 
 export default {
   name: "Works",

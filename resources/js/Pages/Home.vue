@@ -28,7 +28,7 @@
   <Title title="Схема работы" />
   <Scheme />
 
-  <!-- <Contacts /> -->
+  <Contacts />
 </template>
 
 <style scoped>

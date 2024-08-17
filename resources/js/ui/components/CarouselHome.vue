@@ -15,7 +15,7 @@
 
     <div class="carousel-inner">
       <div class="carousel-item" v-for="(slide, index) in slides" :key="index" :class="{ active: index == 0 }">
-        <img :src="slide.image" class="d-block w-100" alt="slider image" />
+        <img loading="lazy" :src="slide.image" class="d-block w-100" alt="slider image" />
         <div class="carousel-caption slider-description">
           <h5 class="title">{{ slide.title }}</h5>
           <p class="description">{{ slide.description }}</p>

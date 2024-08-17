@@ -21,7 +21,7 @@
         >
           <div class="accordion-body flex wrap">
             <div class="image">
-              <img :src="card.image" alt="accordion image" />
+              <img loading="lazy" :src="card.image" alt="accordion image" />
             </div>
             <div class="description">
               {{ card.description }}
