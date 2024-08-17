@@ -4,21 +4,26 @@
       <div class="accordion-item" v-for="(card, i) in cards">
         <h2 class="accordion-header">
           <button
-            class="accordion-button"
+            :class="'accordion-button' + (i ? ' collapsed' : '')"
             type="button"
             data-bs-toggle="collapse"
-            :data-bs-target="`#collapse${i + 1}`"
-            aria-expanded="true"
+            :data-bs-target="`#collapseAbout${i + 1}`"
+            aria-expanded="false"
           >
             {{ card.title }}
           </button>
         </h2>
-        <div :id="`collapse${i + 1}`" class="accordion-collapse collapse show" data-bs-parent="#accordionAbout">
-          <div class="accordion-body flex">
+
+        <div
+          :id="`collapseAbout${i + 1}`"
+          :class="'accordion-collapse collapse' + (!i ? ' show' : '')"
+          data-bs-parent="#accordionAbout"
+        >
+          <div class="accordion-body flex wrap">
             <div class="image">
               <img :src="card.image" alt="accordion image" />
             </div>
-            <div>
+            <div class="description">
               {{ card.description }}
             </div>
           </div>
@@ -48,10 +53,24 @@
   }
 }
 
+.description {
+  width: 45%;
+  flex-grow: 1;
+}
+
 .image {
   width: 40%;
   height: 300px;
+  min-height: 300px;
+  min-width: 300px;
   flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-width: auto;
+
+    height: 50vw;
+  }
 }
 
 .about_card {

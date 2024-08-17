@@ -17,7 +17,7 @@
       <div class="carousel-item" v-for="(slide, index) in slides" :key="index" :class="{ active: index == 0 }">
         <img :src="slide.image" class="d-block w-100" alt="slider image" />
         <div class="carousel-caption slider-description">
-          <h5>{{ slide.title }}</h5>
+          <h5 class="title">{{ slide.title }}</h5>
           <p class="description">{{ slide.description }}</p>
         </div>
       </div>
@@ -41,16 +41,30 @@
 }
 
 .carousel {
+  .carousel-item {
+    height: 600px;
+    max-height: 80vh;
+    min-height: 200px;
+  }
+
   h5 {
     @media (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
 
+  .title {
+    font-size: clamp(20px, 5vw, 32px);
+  }
+
+  .slider-description {
+    text-shadow:
+      0 0px 4px rgba(0, 0, 0),
+      0 0px 4px rgba(0, 0, 0);
+  }
+
   .description {
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+    font-size: clamp(18px, 5vw, 22px);
   }
 }
 </style>
