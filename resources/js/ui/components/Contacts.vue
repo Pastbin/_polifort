@@ -77,6 +77,6 @@ export default {
 .contacts {
   background: #333;
   color: #eee;
-  padding: 30px;
+  padding: 30px 0;
 }
 </style>

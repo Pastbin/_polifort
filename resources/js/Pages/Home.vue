@@ -28,6 +28,9 @@
   <Title title="Схема работы" />
   <Scheme />
 
+  <Title title="С нами сотрудничают" />
+  <CooperateWith />
+
   <Contacts />
 </template>
 
@@ -76,6 +79,7 @@ import Contacts from "@/ui/components/Contacts.vue";
 import About from "@/ui/components/About.vue";
 import Services from "@/ui/components/Services.vue";
 import Scheme from "@/ui/components/Scheme.vue";
+import CooperateWith from "@/ui/components/CooperateWith.vue";
 
 AOS.init({ duration: 1000, delay: 300 });
 
@@ -113,6 +117,7 @@ export default {
     About,
     Services,
     Scheme,
+    CooperateWith,
   },
 };
 </script>
