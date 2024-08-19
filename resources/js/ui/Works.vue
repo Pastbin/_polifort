@@ -1,30 +1,18 @@
 <template>
-  <div class="container mt-5">
+  <section class="container mt-5">
     <Header title="Наша продукция" />
 
     <div class="gallery">
-      <a v-for="(work, i) in works" data-fancybox="gallery" :key="i" data-aos="zoom-in" :href="work.image">
-        <img :src="work.image" loading="lazy" alt="works" />
+      <a v-for="i in 12" data-fancybox="gallery" :key="i" data-aos="zoom-in" :href="`images/works/${i + 1}.webp`">
+        <img :src="`images/works/${i + 1}.webp`" loading="lazy" alt="works" />
       </a>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import slide1 from "../../images/works/1.webp";
-import slide2 from "../../images/works/2.webp";
-import slide3 from "../../images/works/3.webp";
-import slide4 from "../../images/works/4.webp";
-import slide5 from "../../images/works/5.webp";
-import slide6 from "../../images/works/6.webp";
-import slide7 from "../../images/works/7.webp";
-import slide8 from "../../images/works/8.webp";
-import slide9 from "../../images/works/9.webp";
-import slide10 from "../../images/works/10.webp";
-import slide11 from "../../images/works/11.webp";
-import slide12 from "../../images/works/12.webp";
 import Header from "./components/Title.vue";
 
 Fancybox.bind();
@@ -33,24 +21,6 @@ export default {
   name: "Works",
   components: {
     Header,
-  },
-  data() {
-    return {
-      works: [
-        { image: slide1 },
-        { image: slide2 },
-        { image: slide3 },
-        { image: slide4 },
-        { image: slide5 },
-        { image: slide6 },
-        { image: slide7 },
-        { image: slide8 },
-        { image: slide9 },
-        { image: slide10 },
-        { image: slide11 },
-        { image: slide12 },
-      ],
-    };
   },
 };
 </script>
