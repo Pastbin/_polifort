@@ -1,5 +1,5 @@
 <template>
-  <div class="container scheme">
+  <section class="container scheme">
     <div data-aos="flip-up" v-for="(step, i) in scheme.slice(0, scheme.length / 2)" class="flex aic scheme__step card">
       <div class="card-body">
         <div class="flex jcc mb-3 count">{{ i + 1 }}</div>
@@ -18,7 +18,7 @@
         {{ step }}
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

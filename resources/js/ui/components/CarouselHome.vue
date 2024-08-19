@@ -1,5 +1,5 @@
 <template>
-  <div id="carouselHome" class="carousel slide">
+  <section id="carouselHome" class="carousel slide">
     <div class="carousel-indicators">
       <template v-for="(_, index) in 4" :key="index">
         <button
@@ -31,7 +31,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </section>
 </template>
 
 <style scoped>

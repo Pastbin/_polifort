@@ -1,5 +1,5 @@
 <template>
-  <div class="cooperate container">
+  <section class="cooperate container">
     <div class="jcc _wrap">
       <div class="item card" v-for="item in items">
         <img :src="item.img" class="card-img-top" alt="" />
@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">

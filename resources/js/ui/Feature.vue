@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <section class="container">
     <div class="feature">
       <div class="feature__wrap">
         <div data-aos="fade-right" v-for="card in featureCards.slice(0, featureCards.length / 2)" :key="card">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

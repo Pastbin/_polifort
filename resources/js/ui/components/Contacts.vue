@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts mt-5">
+  <section class="contacts mt-5">
     <div class="container flex jcsb wrap">
       <div class="contacts_address flex column">
         <div class="contacts__item">
@@ -49,7 +49,7 @@
 
       <div class="map"><YaMap /></div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

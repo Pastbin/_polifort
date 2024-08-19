@@ -1,5 +1,5 @@
 <template>
-  <div class="about container my-5">
+  <section class="about container my-5">
     <div class="accordion" id="accordionAbout">
       <div class="accordion-item" v-for="(card, i) in cards">
         <h2 class="accordion-header">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

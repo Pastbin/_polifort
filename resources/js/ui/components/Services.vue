@@ -1,5 +1,5 @@
 <template>
-  <div class="services my-5">
+  <section class="services my-5">
     <div class="container">
       <div class="accordion" id="accordion1">
         <div class="accordion-item" v-for="(service, i) in services" :data-aos="i % 2 ? 'fade-left' : 'fade-right'">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
