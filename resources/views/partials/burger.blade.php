@@ -5,7 +5,7 @@
     <div class="flex jcsb">
       <nav>
         <ul class="sidenav-menu flex flex-column gap-2">
-          <li><a href="{{ route("home") }}">Главная</a></li>
+          <li><a href="/">Главная</a></li>
           <li><a href="{{ route("about") }}">О нас</a></li>
           <li><a href="{{ route("products") }}">Продукция</a></li>
           <li><a href="{{ route("contacts") }}">Контакты</a></li>

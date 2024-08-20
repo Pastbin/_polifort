@@ -12,7 +12,6 @@ export const COMPANY_INFO = {
 
 export const MENU_LINKS = [
   { title: "Главная", url: "/" },
-  { title: "О нас", url: "/about" },
   { title: "Продукция", url: "/products" },
   { title: "Контакты", url: "/contacts" },
 ];

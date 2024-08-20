@@ -17,12 +17,12 @@
   @include("partials.header")
   <nav class="header__nav jcc flex">
     <ul>
-      <li><a href="{{ route("home") }}">Главная</a></li>
-      <li><a href="{{ route("about") }}">О нас</a></li>
+      <li><a href="/">Главная</a></li>
       <li><a href="{{ route("products") }}">Продукция</a></li>
       <li><a href="{{ route("contacts") }}">Контакты</a></li>
     </ul>
   </nav>
+
   @include("partials.burger")
   <main>@inertia</main>
   {{-- @include("partials.footer") --}}
