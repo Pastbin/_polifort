@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/ftp"
+    "build": "vue-tsc && vite build && node scripts/ftp",
+    "deploy": "node scripts/ftp"
   },
   "devDependencies": {
     "@inertiajs/vue3": "^1.0.0",

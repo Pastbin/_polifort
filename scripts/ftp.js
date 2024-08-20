@@ -14,14 +14,13 @@ ftpDeploy
     port: process.env.FTP_PORT || 21,
     localRoot: path.join(import.meta.dirname, ".."),
     remoteRoot: "/",
-    include: ["*", "**/*"],
-    exclude: ["node_modules/**, scripts/**, vendor/**", "bootstrap/**", "tests/**", ".env", "*.docx", "*.tmp"],
+    include: ["app/**", "public/**", "routes/**"],
     deleteRemote: false,
     forcePasv: true,
   })
   .then((res) => console.log("Успешный деплой!"))
   .catch((err) => console.log("Ошибка деплоя", err));
 
-ftpDeploy.on("uploading", () => {
-  log("Началась загрузка...");
+ftpDeploy.on("uploading", (file) => {
+  log("Идёт загрузка...", file);
 });
