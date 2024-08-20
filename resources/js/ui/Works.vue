@@ -3,8 +3,8 @@
     <Header title="Наша продукция" />
 
     <div class="gallery">
-      <a v-for="i in 12" data-fancybox="gallery" :key="i" data-aos="zoom-in" :href="`images/works/${i + 1}.webp`">
-        <img :src="`images/works/${i + 1}.webp`" loading="lazy" alt="works" />
+      <a v-for="i in 12" data-fancybox="gallery" :key="i" data-aos="zoom-in" :href="`images/works/${i}.webp`">
+        <img :src="`images/works/${i}.webp`" loading="lazy" alt="works" />
       </a>
     </div>
   </section>

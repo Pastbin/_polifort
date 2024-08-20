@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build"
+    "build": "node scripts/ftp"
   },
   "devDependencies": {
     "@inertiajs/vue3": "^1.0.0",
@@ -31,6 +31,7 @@
     "@fancyapps/ui": "^5.0.36",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap-icons": "^1.11.3",
+    "dotenv": "^16.4.5"
   }
 }
