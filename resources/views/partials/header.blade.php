@@ -1,5 +1,4 @@
 <header>
-  @vite("resources/scss/header.scss")
   <div class="container">
     <div class="header">
       <div class="header__top">

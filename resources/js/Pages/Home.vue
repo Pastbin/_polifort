@@ -84,6 +84,7 @@ import CooperateWith from "@/ui/components/CooperateWith.vue";
 AOS.init({ duration: 1000, delay: 300 });
 
 export default {
+  name: "Home",
   data() {
     return {
       bg,
