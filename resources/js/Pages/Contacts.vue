@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <title>{{ COMPANY_INFO.name }} - Контакты</title>
+  </Head>
+
   <div class="container">
     <h1 class="mb-5">Контакты</h1>
 
@@ -64,11 +68,13 @@
 <script>
 import YaMap from "@/ui/components/YaMap.vue";
 import { COMPANY_INFO } from "@/const/contacts";
+import { Head } from "@inertiajs/vue3";
 
 export default {
   name: "Contacts",
   components: {
     YaMap,
+    Head,
   },
   data: () => ({
     COMPANY_INFO,

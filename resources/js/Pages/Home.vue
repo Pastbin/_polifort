@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <title>{{ COMPANY_INFO.name }} - Главная</title>
+  </Head>
+
   <CarouselHome />
 
   <div class="container mt-5 d-flex gap-3 feature">
@@ -80,6 +84,9 @@ import About from "@/ui/components/About.vue";
 import Services from "@/ui/components/Services.vue";
 import Scheme from "@/ui/components/Scheme.vue";
 import CooperateWith from "@/ui/components/CooperateWith.vue";
+import { usePage } from "@inertiajs/vue3";
+import { COMPANY_INFO } from "@/const/contacts";
+import { Head } from "@inertiajs/vue3";
 
 AOS.init({ duration: 1000, delay: 300 });
 
@@ -106,6 +113,7 @@ export default {
         },
       ],
       Works,
+      COMPANY_INFO,
     };
   },
   components: {
@@ -119,6 +127,10 @@ export default {
     Services,
     Scheme,
     CooperateWith,
+    Head,
+  },
+  setup() {
+    usePage().props.title = COMPANY_INFO.name + " - Главная";
   },
 };
 </script>

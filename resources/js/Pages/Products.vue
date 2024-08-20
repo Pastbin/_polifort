@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <title>{{ COMPANY_INFO.name }} - Продукция</title>
+  </Head>
+
   <Works />
 
   <div class="container">
@@ -31,6 +35,7 @@ import Title from "@/ui/components/Title.vue";
 import Works from "@/ui/Works.vue";
 import Rutube from "@/ui/components/Rutube.vue";
 import Contacts from "@/ui/components/Contacts.vue";
+import Home from "./Home.vue";
 
 export default {
   name: "Products",
@@ -39,6 +44,7 @@ export default {
     Works,
     Rutube,
     Contacts,
+    Home,
   },
   data: () => ({
     cards: [

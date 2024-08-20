@@ -7,10 +7,8 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-const appName = import.meta.env.VITE_APP_NAME || "Laravel";
-
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => title || "ООО ПолифортМаш",
   resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob<DefineComponent>("./Pages/**/*.vue")),
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
