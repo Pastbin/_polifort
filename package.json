@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "concurrently \"php artisan serve\" \"vite\"",
     "build": "vue-tsc && vite build && node scripts/ftp",
     "deploy": "node scripts/ftp"
   },
@@ -15,6 +15,7 @@
     "@vitejs/plugin-vue": "^5.0.0",
     "autoprefixer": "^10.4.12",
     "axios": "^1.6.4",
+    "concurrently": "^8.2.2",
     "ftp-deploy": "^2.4.7",
     "laravel-vite-plugin": "^1.0",
     "postcss": "^8.4.31",
