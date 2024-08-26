@@ -35,6 +35,9 @@
   <Title title="С нами сотрудничают" />
   <CooperateWith />
 
+  <Title title="Обратная связь" />
+  <Feedback />
+
   <Contacts />
 </template>
 
@@ -87,6 +90,7 @@ import CooperateWith from "@/ui/components/CooperateWith.vue";
 import { usePage } from "@inertiajs/vue3";
 import { COMPANY_INFO } from "@/const/contacts";
 import { Head } from "@inertiajs/vue3";
+import Feedback from "@/ui/components/Feedback.vue";
 
 AOS.init({ duration: 1000, delay: 300 });
 
@@ -128,6 +132,7 @@ export default {
     Scheme,
     CooperateWith,
     Head,
+    Feedback,
   },
   setup() {
     usePage().props.title = COMPANY_INFO.name + " - Главная";

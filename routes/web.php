@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Mail\FeedbackMail;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return Inertia::render('Home');
@@ -34,5 +36,38 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
+
+Route::post('/feedback', function (Request $request) {
+
+    try {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
+        $details = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'message' => $request->input('message'),
+        ];
+
+        Log::info('Mail details', $details);
+
+        Mail::to('pastbin.alex@gmail.com')->send(new FeedbackMail($details));
+        Log::info('Mail sent successfully');
+
+        return back()->with('success', 'Ваше сообщение отправлено!');
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        return back()->withErrors($e->errors())->withInput();
+    } catch (\Exception $e) {
+        Log::error('Mail sending failed', ['error' => $e->getMessage()]);
+        return back()->with('error', 'Ошибка при отправке сообщения.');
+    }
+});
+
+
 
 require __DIR__ . '/auth.php';
