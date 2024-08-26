@@ -11,11 +11,11 @@
       <input type="hidden" :value="csrfToken" name="_token" />
       <label class="form-label">
         Имя
-        <input value="nameUser" name="name" placeholder="Ваше имя" class="form-control" />
+        <input name="name" placeholder="Ваше имя" class="form-control" />
       </label>
       <label class="form-label">
         Почта
-        <input value="test@test.com" name="email" type="email" placeholder="Ваша почта" class="form-control" />
+        <input name="email" type="email" placeholder="Ваша почта" class="form-control" />
       </label>
       <label class="form-label">
         Сообщение
