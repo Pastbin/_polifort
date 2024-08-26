@@ -36,6 +36,7 @@ import Works from "@/ui/Works.vue";
 import Rutube from "@/ui/components/Rutube.vue";
 import Contacts from "@/ui/components/Contacts.vue";
 import Home from "./Home.vue";
+import { COMPANY_INFO } from "@/const/contacts";
 
 export default {
   name: "Products",
@@ -61,6 +62,7 @@ export default {
         video: "https://rutube.ru/play/embed/19a5f2aca1d32c42d6dbbd358bff777f/?t=16",
       },
     ],
+    COMPANY_INFO,
   }),
 };
 </script>
