@@ -6,13 +6,18 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/filesystem": "*",
         "inertiajs/inertia-laravel": "^1.0",
+        "intervention/image": "^3.8",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "mews/captcha": "^3.4",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.1",
         "fakerphp/faker": "^1.23",
         "laravel/breeze": "^2.1",
         "laravel/pint": "^1.13",
