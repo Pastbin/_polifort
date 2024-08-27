@@ -10,18 +10,18 @@
   </section>
 </template>
 
+<script setup>
+import Header from "./components/Title.vue";
+</script>
+
 <script>
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import Header from "./components/Title.vue";
 
 Fancybox.bind();
 
 export default {
   name: "Works",
-  components: {
-    Header,
-  },
 };
 </script>
 

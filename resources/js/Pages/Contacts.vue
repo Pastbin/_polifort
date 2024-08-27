@@ -65,17 +65,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import YaMap from "@/ui/components/YaMap.vue";
 import { COMPANY_INFO } from "@/const/contacts";
 import { Head } from "@inertiajs/vue3";
+</script>
 
+<script>
 export default {
   name: "Contacts",
-  components: {
-    YaMap,
-    Head,
-  },
   data: () => ({
     COMPANY_INFO,
   }),

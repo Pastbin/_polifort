@@ -30,23 +30,21 @@
   <Contacts />
 </template>
 
-<script>
-import Title from "@/ui/components/Title.vue";
-import Works from "@/ui/Works.vue";
+<script setup>
+import { COMPANY_INFO } from "@/const/contacts";
+import { Head } from "@inertiajs/vue3";
 import Rutube from "@/ui/components/Rutube.vue";
+import Title from "@/ui/components/Title.vue";
+import Works from "@/ui/components/Works.vue";
 import Contacts from "@/ui/components/Contacts.vue";
-import Home from "./Home.vue";
+import Home from "@/ui/components/Home.vue";
+</script>
+
+<script>
 import { COMPANY_INFO } from "@/const/contacts";
 
 export default {
   name: "Products",
-  components: {
-    Title,
-    Works,
-    Rutube,
-    Contacts,
-    Home,
-  },
   data: () => ({
     cards: [
       {

@@ -52,15 +52,15 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import YaMap from "./YaMap.vue";
+</script>
+
+<script>
 import { COMPANY_INFO } from "../../const/contacts";
 
 export default {
   name: "Contacts",
-  components: {
-    YaMap,
-  },
   data() {
     return {
       COMPANY_INFO,

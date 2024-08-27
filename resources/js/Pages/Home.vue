@@ -72,70 +72,29 @@
 }
 </style>
 
-<script>
+<script setup>
+import { usePage } from "@inertiajs/vue3";
+import { COMPANY_INFO } from "@/const/contacts";
+import { Head } from "@inertiajs/vue3";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "aos/dist/aos.js";
+
 import Works from "../ui/Works.vue";
 import Feature from "@/ui/Feature.vue";
 import BgParallax from "@/ui/components/BgParallax.vue";
 import CarouselHome from "@/ui/components/CarouselHome.vue";
-import bg from "../../images/bg/parallax.webp";
 import Title from "@/ui/components/Title.vue";
 import Contacts from "@/ui/components/Contacts.vue";
 import About from "@/ui/components/About.vue";
 import Services from "@/ui/components/Services.vue";
 import Scheme from "@/ui/components/Scheme.vue";
 import CooperateWith from "@/ui/components/CooperateWith.vue";
-import { usePage } from "@inertiajs/vue3";
-import { COMPANY_INFO } from "@/const/contacts";
-import { Head } from "@inertiajs/vue3";
 import Feedback from "@/ui/components/Feedback.vue";
+
+const bg = "../../images/bg/parallax.webp";
 
 AOS.init({ duration: 1000, delay: 300 });
 
-export default {
-  name: "Home",
-  data() {
-    return {
-      bg,
-      featureCards: [
-        {
-          title: "Высокоточная обработка",
-          description:
-            "Наше оборудование позволяет выполнять операции с точностью до сотой доли миллиметра, что гарантирует качество и соответствие чертежам.",
-        },
-        {
-          title: "Широкий спектр услуг",
-          description:
-            "Мы предоставляем полный комплекс услуг по металлообработке, включая токарные, фрезерные, сверлильные и шлифовальные работы.",
-        },
-        {
-          title: "Надёжность и долговечность",
-          description:
-            "Наши изделия проходят строгий контроль качества, что обеспечивает их надёжность и долговечность в эксплуатации.",
-        },
-      ],
-      Works,
-      COMPANY_INFO,
-    };
-  },
-  components: {
-    Works,
-    Feature,
-    BgParallax,
-    CarouselHome,
-    Title,
-    Contacts,
-    About,
-    Services,
-    Scheme,
-    CooperateWith,
-    Head,
-    Feedback,
-  },
-  setup() {
-    usePage().props.title = COMPANY_INFO.name + " - Главная";
-  },
-};
+usePage().props.title = COMPANY_INFO.name + " - Главная";
 </script>

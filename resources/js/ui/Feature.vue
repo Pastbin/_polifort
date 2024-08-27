@@ -34,14 +34,13 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import Header from "./components/Title.vue";
+</script>
 
+<script>
 export default {
   name: "Feature",
-  components: {
-    Header,
-  },
   data() {
     return {
       featureCards: [
