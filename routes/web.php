@@ -37,10 +37,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 
-Route::post('/feedback', function (Request $request) {
+Route::post('/api/feedback', function (Request $request) {
 
     try {
         $request->validate([
@@ -59,12 +61,12 @@ Route::post('/feedback', function (Request $request) {
         Mail::to('pastbin.alex@gmail.com')->send(new FeedbackMail($details));
         Log::info('Mail sent successfully');
 
-        return back()->with('success', 'Ваше сообщение отправлено!');
+        return response()->json(['data' => 'ok']);
     } catch (\Illuminate\Validation\ValidationException $e) {
-        return back()->withErrors($e->errors())->withInput();
+        return response()->json(['errors' => $e->errors()]);
     } catch (\Exception $e) {
         Log::error('Mail sending failed', ['error' => $e->getMessage()]);
-        return back()->with('error', 'Ошибка при отправке сообщения.');
+        return response()->json(['errors' => $e->getMessage()]);
     }
 });
 

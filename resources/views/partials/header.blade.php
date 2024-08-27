@@ -13,7 +13,7 @@
 
         </div>
 
-        <div class="header__info">
+        <div class="header__info w-100 ">
           <div class="header__info__wrap">
             <div class="header__info__item mb-2">
               <i class="bi bi-geo-alt"></i>
@@ -34,6 +34,11 @@
               <i class="bi bi-envelope"></i>
               <a class="d-block" href="mailto:polifort-pro@mail.ru ">polifort-pro@mail.ru</a>
             </div>
+          </div>
+
+          <div class="auth-btn ms-auto">
+            <a class="btn btn-primary" href="{{ route('login') }}">Войти</a>
+            <a class="btn btn-primary" href="{{ route('register') }}">Регистрация</a>
           </div>
         </div>
 

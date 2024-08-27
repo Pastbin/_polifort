@@ -1,13 +1,6 @@
 <template>
   <div class="feedback container">
-    <form
-      autocomplete="on"
-      ref="feedbackForm"
-      @submit.prevent="checkCaptcha"
-      method="POST"
-      action="/feedback"
-      class="flex flex-column gap-2"
-    >
+    <form autocomplete="on" ref="feedbackForm" @submit.prevent="checkCaptcha" class="flex flex-column gap-2">
       <input type="hidden" :value="csrfToken" name="_token" />
       <label class="form-label">
         Имя
@@ -27,15 +20,27 @@
         <input type="text" v-model="userAnswer" class="form-control" placeholder="Введите ответ" />
         <div class="text-danger">{{ errorMessage || "&nbsp;" }}</div>
       </label>
+      <button class="btn btn-primary" :disabled="isLoading">
+        <span v-if="!isLoading">Отправить</span>
+        <span v-else class="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+      </button>
 
-      <button class="btn btn-primary">Отправить</button>
-
-      <div v-if="isSent" class="modal fade show" style="display: block" tabindex="-1" aria-modal="true" role="dialog">
+      <div
+        :class="{ modal: true, fade: true, show: isSent || errorMessage }"
+        tabindex="-1"
+        aria-modal="true"
+        role="dialog"
+      >
         <div class="modal-dialog shadow-lg bg-white rounded" style="background-color: rgba(0, 0, 0, 0.5)">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Сообщение отправлено</h5>
-              <button type="button" class="btn-close" @click="isSent = false" aria-label="Close"></button>
+              <h5 class="modal-title">{{ !errorMessage ? "Сообщение отправлено" : "Сообщение не отправлено" }}</h5>
+              <button
+                type="button"
+                class="btn-close"
+                @click="isSent = !isSent && (errorMessage = '')"
+                aria-label="Close"
+              ></button>
             </div>
           </div>
         </div>
@@ -61,27 +66,32 @@ export default {
       csrfToken: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
       errorMessage: "",
       isSent: false,
+      isLoading: false,
     };
   },
   methods: {
     checkCaptcha() {
       if (parseInt(this.userAnswer) === this.num1 + this.num2) {
         this.errorMessage = "";
-        this.$refs.feedbackForm.submit();
-        this.isSent = true;
-        // fetch("https://polifortmash.ru/feedback", {
-        //   method: "POST",
-        //   body: new FormData(this.$refs.feedbackForm),
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log("data", data);
-
-        //     if (data.ok) this.isSent = true;
-        //   })
-        //   .catch((error) => {
-        //     console.error("Error:", error);
-        //   });
+        this.isLoading = true;
+        fetch("https://polifortmash.ru/api/feedback", {
+          method: "POST",
+          body: new FormData(this.$refs.feedbackForm),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            this.isSent = true;
+            if (data.data !== "ok") this.errorMessage = "Произошла ошибка. Попробуйте снова.";
+            else {
+              this.$refs.feedbackForm.reset();
+            }
+          })
+          .catch((error) => {
+            this.errorMessage = "Произошла ошибка. Попробуйте снова.";
+          })
+          .finally(() => {
+            this.isLoading = false;
+          });
       } else {
         this.errorMessage = "Неправильный ответ. Попробуйте снова.";
         this.num1 = getRandomInt(10, 20);
