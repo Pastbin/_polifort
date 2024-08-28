@@ -36,9 +36,16 @@
             </div>
           </div>
 
-          <div class="auth-btn ms-auto">
+
+          <div class="ms-auto">
+            @auth
+            <div class="font-medium text-sm text-gray-500">
+              <a href="{{ route('login') }}" class="btn btn-primary">{{ auth()->user()->email }}</a>
+            </div>
+            @else
             <a class="btn btn-primary" href="{{ route('login') }}">Войти</a>
             <a class="btn btn-primary" href="{{ route('register') }}">Регистрация</a>
+            @endauth
           </div>
         </div>
 

@@ -19,7 +19,7 @@
   <Works />
 
   <Title title="Наши преимущества" />
-  <BgParallax :src="bg" class="my-5">
+  <BgParallax src="images/bg/parallax.webp" class="my-5">
     <Feature class="my-5" />
   </BgParallax>
 
@@ -79,7 +79,6 @@ import { Head } from "@inertiajs/vue3";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "aos/dist/aos.js";
-
 import Works from "../ui/Works.vue";
 import Feature from "@/ui/Feature.vue";
 import BgParallax from "@/ui/components/BgParallax.vue";
@@ -92,9 +91,33 @@ import Scheme from "@/ui/components/Scheme.vue";
 import CooperateWith from "@/ui/components/CooperateWith.vue";
 import Feedback from "@/ui/components/Feedback.vue";
 
-const bg = "../../images/bg/parallax.webp";
-
 AOS.init({ duration: 1000, delay: 300 });
 
 usePage().props.title = COMPANY_INFO.name + " - Главная";
+</script>
+
+<script>
+export default {
+  data() {
+    return {
+      featureCards: [
+        {
+          title: "Высокоточная обработка",
+          description:
+            "Наше оборудование позволяет выполнять операции с точностью до сотой доли миллиметра, что гарантирует качество и соответствие чертежам.",
+        },
+        {
+          title: "Широкий спектр услуг",
+          description:
+            "Мы предоставляем полный комплекс услуг по металлообработке, включая токарные, фрезерные, сверлильные и шлифовальные работы.",
+        },
+        {
+          title: "Надёжность и долговечность",
+          description:
+            "Наши изделия проходят строгий контроль качества, что обеспечивает их надёжность и долговечность в эксплуатации.",
+        },
+      ],
+    };
+  },
+};
 </script>

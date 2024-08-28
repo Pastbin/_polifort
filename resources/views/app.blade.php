@@ -26,7 +26,6 @@
 
   @include("partials.burger")
   <main>@inertia</main>
-  {{-- @include("partials.footer") --}}
 </body>
 
 </html>

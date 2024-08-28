@@ -1,5 +1,7 @@
 <template>
-  <div class="container">
+  <Head title="Регистрация" />
+
+  <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
@@ -9,24 +11,41 @@
               <div class="form-group row mb-2">
                 <label for="name" class="col-md-4 col-form-label text-md-right">Логин</label>
                 <div class="col-md-6">
-                  <input id="name" type="text" class="form-control" v-model="form.name" required autofocus />
-                  <InputError :message="form.errors.name" />
+                  <input
+                    id="name"
+                    minlength="6"
+                    type="text"
+                    class="form-control"
+                    v-model="form.name"
+                    required
+                    autofocus
+                  />
+                  <div class="form-text text-danger">{{ form.errors.name }}</div>
                 </div>
               </div>
 
               <div class="form-group row mb-2">
                 <label for="email" class="col-md-4 col-form-label text-md-right">Электронная почта</label>
                 <div class="col-md-6">
-                  <input id="email" type="email" class="form-control" v-model="form.email" required />
-                  <InputError :message="form.errors.email" />
+                  <input id="email" minlength="6" type="email" class="form-control" v-model="form.email" required />
+                  <div class="form-text text-danger">{{ form.errors.email }}</div>
                 </div>
               </div>
 
               <div class="form-group row mb-2">
                 <label for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
                 <div class="col-md-6">
-                  <input id="password" type="password" class="form-control" v-model="form.password" required />
-                  <InputError :message="form.errors.password" />
+                  <input
+                    id="password"
+                    minlength="6"
+                    type="password"
+                    class="form-control"
+                    v-model="form.password"
+                    required
+                  />
+                  <div class="form-text text-danger">
+                    {{ form.errors.password || form.errors.password_confirmation }}
+                  </div>
                 </div>
               </div>
 
@@ -38,6 +57,7 @@
                   <input
                     id="password_confirmation"
                     type="password"
+                    minlength="6"
                     class="form-control"
                     v-model="form.password_confirmation"
                     required
@@ -74,8 +94,16 @@ const submit = () => {
     form.setError("password", "Пароли не совпадают");
     return;
   }
+  if (form.password.length < 6) {
+    form.setError("password", "Пароль должен содержать не менее 6 символов");
+    return;
+  }
+
   form.post(route("register"), {
-    onFinish: () => {
+    onFinish: (e) => {
+      console.log("onFinish", e.data);
+      console.log(form.errors);
+
       form.reset("password", "password_confirmation");
     },
   });
