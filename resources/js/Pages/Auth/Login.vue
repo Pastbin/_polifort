@@ -26,7 +26,7 @@ const submit = () => {
 </script>
 
 <template>
-  <div class="container login">
+  <div class="container login my-5">
     <div class="card">
       <div class="card-header">Вход</div>
       <div class="card-body">
