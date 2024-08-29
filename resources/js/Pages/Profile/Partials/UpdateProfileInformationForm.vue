@@ -26,27 +26,14 @@ defineProps<{
     >
       <div>
         <label for="name" class="form-label">Имя</label>
-        <input id="name" type="text" class="form-control" v-model="form.name" required autofocus autocomplete="name" />
+        <input id="name" minlength="2" type="text" class="form-control" v-model="form.name" required autofocus />
         <div class="form-text">{{ form.errors.name }}</div>
       </div>
 
       <div>
         <label for="email" class="form-label">Электронная почта</label>
-        <input type="email" id="email" class="form-control" v-model="form.email" required autocomplete="username" />
+        <input type="email" id="email" class="form-control" v-model="form.email" required />
         <div class="form-text" v-if="form.errors.email">{{ form.errors.email }}</div>
-      </div>
-
-      <div v-if="!mustVerifyEmail && user.email_verified_at === null">
-        <p class="text-sm text-gray-800">
-          Ваш адрес электронной почты не подтвержден.
-          <Link :href="route('verification.send')" method="post" as="button" class="btn btn-link">
-            Отправить повторно
-          </Link>
-        </p>
-
-        <div v-show="status === 'verification-link-sent'" class="mt-2 font-medium text-sm text-green-600">
-          На ваш адрес электронной почты была отправлена ​​новая ссылка для подтверждения.
-        </div>
       </div>
 
       <div class="flex items-center gap-4">

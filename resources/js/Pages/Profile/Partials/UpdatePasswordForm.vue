@@ -34,40 +34,46 @@ const updatePassword = () => {
 <template>
   <section>
     <header>
-      <h2 class="text-lg font-medium text-gray-900">Обновить пароль</h2>
+      <h2>Обновить пароль</h2>
 
       <p>Чтобы обеспечить безопасность, в вашей учетной записи используйте надёжный пароль.</p>
     </header>
 
     <form @submit.prevent="updatePassword" class="flex gap-2 flex-column">
-      <label>
-        Текущий пароль
-        <input
-          ref="currentPasswordInput"
-          v-model="form.current_password"
-          type="password"
-          class="form-control"
-          autocomplete="current-password"
-        />
-      </label>
+      <div>
+        <label class="w-100">
+          Текущий пароль
+          <input
+            required
+            ref="currentPasswordInput"
+            v-model="form.current_password"
+            type="password"
+            class="form-control"
+          />
+        </label>
+        <div class="form-text text-danger">{{ form.errors.current_password && "Неверный пароль" }}</div>
+      </div>
 
       <div>
-        <label class="form-label w-100"
+        <label class="w-100"
           >Новый пароль
           <input
+            required
+            minlength="6"
             ref="passwordInput"
             v-model="form.password"
             type="password"
             class="form-control"
-            autocomplete="new-password"
           />
         </label>
-        <div class="form-text" v-if="form.errors.password">{{ form.errors.password }}</div>
+        <div class="form-text text-danger" v-if="form.errors.password">
+          {{ form.errors.password === "validation.confirmed" && "Пароли не совпадают" }}
+        </div>
       </div>
 
       <label>
         Подтвердите новый пароль
-        <input class="form-control" type="password" v-model="form.password_confirmation" />
+        <input required minlength="6" class="form-control" type="password" v-model="form.password_confirmation" />
       </label>
 
       <div class="flex aic gap-4 mt-3">
