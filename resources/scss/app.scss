@@ -1,8 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import "fonts.scss";
-@import "header.scss";
-@import "burger.scss";
 @import "menu.scss";
 
 html {
@@ -29,7 +27,7 @@ body {
   }
 }
 
-main {
+#app {
   flex-grow: 1;
   overflow-x: hidden;
 }

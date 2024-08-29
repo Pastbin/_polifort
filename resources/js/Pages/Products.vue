@@ -1,33 +1,33 @@
 <template>
-  <Head>
-    <title>{{ COMPANY_INFO.name }} - Продукция</title>
-  </Head>
+  <MainLayout>
+    <Head>
+      <title>{{ COMPANY_INFO.name }} - Продукция</title>
+    </Head>
 
-  <Works />
+    <Works />
 
-  <div class="container">
-    <Title title="Оборудование" />
+    <div class="container">
+      <Title title="Оборудование" />
 
-    <div class="products gap-3 my-5">
-      <div class="w-100 my-4" v-for="(card, i) in cards">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title mb-3">
-              <h5>{{ card.title }}</h5>
-            </div>
+      <div class="products gap-3 my-5">
+        <div class="w-100 my-4" v-for="(card, i) in cards">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title mb-3">
+                <h5>{{ card.title }}</h5>
+              </div>
 
-            <div class="flex item wrap">
-              <div class="video"><Rutube :src="card.video" /></div>
+              <div class="flex item wrap">
+                <div class="video"><Rutube :src="card.video" /></div>
 
-              <div class="description">{{ card.description }}</div>
+                <div class="description">{{ card.description }}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <Contacts />
+  </MainLayout>
 </template>
 
 <script setup>
@@ -35,9 +35,9 @@ import { COMPANY_INFO } from "@/const/contacts";
 import { Head } from "@inertiajs/vue3";
 import Rutube from "@/ui/components/Rutube.vue";
 import Title from "@/ui/components/Title.vue";
-import Works from "@/ui/components/Works.vue";
+import Works from "@/ui/Works.vue";
 import Contacts from "@/ui/components/Contacts.vue";
-import Home from "@/ui/components/Home.vue";
+import MainLayout from "@/Layouts/MainLayout.vue";
 </script>
 
 <script>

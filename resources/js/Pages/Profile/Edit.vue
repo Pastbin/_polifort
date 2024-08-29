@@ -1,42 +1,32 @@
 <script setup lang="ts">
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import DeleteUserForm from './Partials/DeleteUserForm.vue';
-import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
-import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
-import { Head } from '@inertiajs/vue3';
+import MainLayout from "@/Layouts/MainLayout.vue";
+import UpdatePasswordForm from "./Partials/UpdatePasswordForm.vue";
+import UpdateProfileInformationForm from "./Partials/UpdateProfileInformationForm.vue";
+import { Head } from "@inertiajs/vue3";
 
 defineProps<{
-    mustVerifyEmail?: boolean;
-    status?: string;
+  mustVerifyEmail?: boolean;
+  status?: string;
 }>();
 </script>
 
 <template>
-    <Head title="Profile" />
+  <Head title="Профиль" />
 
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Profile</h2>
-        </template>
+  <MainLayout>
+    <div class="container card">
+      <div class="card-body flex flex-column gap-5">
+        <UpdateProfileInformationForm :must-verify-email="mustVerifyEmail" :status="status" />
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <UpdateProfileInformationForm
-                        :must-verify-email="mustVerifyEmail"
-                        :status="status"
-                        class="max-w-xl"
-                    />
-                </div>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <UpdatePasswordForm class="max-w-xl" />
-                </div>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <DeleteUserForm class="max-w-xl" />
-                </div>
-            </div>
-        </div>
-    </AuthenticatedLayout>
+        <UpdatePasswordForm />
+      </div>
+    </div>
+  </MainLayout>
 </template>
+
+<style lang="scss" scoped>
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+</style>

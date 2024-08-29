@@ -15,17 +15,7 @@
 </head>
 
 <body class="font-sans antialiased">
-  @include("partials.header")
-  <nav class="header__nav jcc flex">
-    <ul>
-      <li><a href="/">Главная</a></li>
-      <li><a href="{{ route("products") }}">Продукция</a></li>
-      <li><a href="{{ route("contacts") }}">Контакты</a></li>
-    </ul>
-  </nav>
-
-  @include("partials.burger")
-  <main>@inertia</main>
+  @inertia
 </body>
 
 </html>
