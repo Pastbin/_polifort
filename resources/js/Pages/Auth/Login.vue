@@ -40,7 +40,7 @@ const submit = () => {
                 autofocus
                 autocomplete="username"
               />
-              <div class="invalid-feedback" v-if="form.errors.email">{{ form.errors.email }}</div>
+              <div class="form-text text-danger" v-if="form.errors.email">{{ form.errors.email }}</div>
             </div>
 
             <div class="mb-3">
@@ -53,7 +53,7 @@ const submit = () => {
                 required
                 autocomplete="current-password"
               />
-              <div class="invalid-feedback" v-if="form.errors.password">{{ form.errors.password }}</div>
+              <div class="form-text text-danger" v-if="form.errors.password">{{ form.errors.password }}</div>
             </div>
 
             <div class="mb-3 form-check">

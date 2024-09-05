@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return Inertia::render('Home');
-});
-
-Route::get('/home', function () {
-    return Inertia::render('Home');
 })->name('home');
 
 Route::get('/about', function () {

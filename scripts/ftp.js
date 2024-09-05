@@ -14,7 +14,8 @@ ftpDeploy
     port: process.env.FTP_PORT || 21,
     localRoot: path.join(import.meta.dirname, ".."),
     remoteRoot: "/",
-    include: ["app/**", "public/**", "routes/**", "resources/**"],
+    include: ["app/**", "public/**", "routes/**", "resources/**", "lang/**/**"],
+    exclude: ["hot"],
     deleteRemote: false,
     forcePasv: true,
   })
