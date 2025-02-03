@@ -59,7 +59,7 @@ const updatePassword = () => {
           >Новый пароль
           <input
             required
-            minlength="6"
+            minlength="8"
             ref="passwordInput"
             v-model="form.password"
             type="password"
@@ -73,7 +73,7 @@ const updatePassword = () => {
 
       <label>
         Подтвердите новый пароль
-        <input required minlength="6" class="form-control" type="password" v-model="form.password_confirmation" />
+        <input required minlength="8" class="form-control" type="password" v-model="form.password_confirmation" />
       </label>
 
       <div class="flex aic gap-4 mt-3">

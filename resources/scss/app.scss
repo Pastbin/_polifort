@@ -27,6 +27,10 @@ body {
   }
 }
 
+ol,ul{
+  padding-left: 20px;
+}
+
 #app {
   flex-grow: 1;
   overflow-x: hidden;

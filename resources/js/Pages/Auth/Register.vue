@@ -38,7 +38,7 @@
                   <div class="col-md-6">
                     <input
                       id="password"
-                      minlength="8"
+                      minlength="6"
                       type="password"
                       class="form-control"
                       v-model="form.password"
@@ -58,7 +58,7 @@
                     <input
                       id="password_confirmation"
                       type="password"
-                      minlength="8"
+                      minlength="6"
                       class="form-control"
                       v-model="form.password_confirmation"
                       required

@@ -28,7 +28,7 @@
             <div class="header__info__wrap">
               <div class="header__info__item mb-2">
                 <i class="bi bi-telephone"></i>
-                <a class="d-block" href="tel:+78463425226">8 (846) 342-52-26</a>
+                <a class="d-block" :href="'tel:' + COMPANY_INFO.phone.alink">{{ COMPANY_INFO.phone.number }}</a>
               </div>
               <div class="header__info__item">
                 <i class="bi bi-envelope"></i>
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import { COMPANY_INFO } from "@/const/contacts";
 import { Link } from "@inertiajs/vue3";
 
 export default {
@@ -62,6 +63,10 @@ export default {
       this.$inertia.post(route("logout"));
     },
   },
+
+  data: () => ({
+    COMPANY_INFO,
+  }),
 
   components: { Link },
 };

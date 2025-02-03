@@ -1,8 +1,8 @@
 export const COMPANY_INFO = {
   name: 'ООО "ПолифортМаш"',
   phone: {
-    alink: "88463425226",
-    number: "8 (846) 342-52-26",
+    alink: "+79372014888",
+    number: "+7 937 201-48-88",
   },
   address: "г. Самара, ул. Революционная, д. 70, литера п, офис 409",
   email: "polifort-pro@mail.ru",

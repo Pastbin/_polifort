@@ -74,7 +74,6 @@
 
 <script setup>
 import { usePage } from "@inertiajs/vue3";
-import { COMPANY_INFO } from "@/const/contacts";
 import { Head } from "@inertiajs/vue3";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -91,6 +90,7 @@ import Scheme from "@/ui/components/Scheme.vue";
 import CooperateWith from "@/ui/components/CooperateWith.vue";
 import Feedback from "@/ui/components/Feedback.vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
+import { COMPANY_INFO } from "@/const/contacts";
 
 AOS.init({ duration: 1000, delay: 300 });
 

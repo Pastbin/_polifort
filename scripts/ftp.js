@@ -15,7 +15,7 @@ ftpDeploy
     localRoot: path.join(import.meta.dirname, ".."),
     remoteRoot: "/",
     include: ["app/**", "public/**", "routes/**", "resources/**", "lang/**/**"],
-    exclude: ["hot"],
+    exclude: ["hot", "public/video/**"],
     deleteRemote: false,
     forcePasv: true,
   })
